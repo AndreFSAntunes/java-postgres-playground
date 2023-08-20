@@ -19,12 +19,12 @@ public class AppBd {
             // estadoDao.listar();
             // estadoDao.localizar("TO");
 
-            // var marca = new Marca(42L);
-            // var produto = new Produto(202l, "Universal Device Plus", marca, 1400d);
-            // var produtoDao = new ProdutoDao(conn);
+            var marca = new Marca(42L);
+            var produto = new Produto(205l, "Universal Device Plus", marca, 1499d);
+            var produtoDao = new ProdutoDao(conn);
             // produtoDao.inserir(produto);
             // produtoDao.excluir(206);
-            // produtoDao.alterar(produto);
+            produtoDao.alterar(produto);
             var dao = new Dao(conn);
             dao.listar("produto", true);
         } catch (SQLException e) {
