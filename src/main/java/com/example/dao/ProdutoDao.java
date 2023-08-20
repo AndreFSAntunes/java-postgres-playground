@@ -12,7 +12,7 @@ public class ProdutoDao {
         this.conn = conn;
     }
 
-    private void excluir(int id) {
+    public void excluir(int id) {
         var sql = "delete from produto where id = ?";
         try (var statement = conn.prepareStatement(sql)) {
             statement.setLong(1, id);
@@ -24,7 +24,7 @@ public class ProdutoDao {
         }
     }
 
-    private void alterar(Produto produto) {
+    public void alterar(Produto produto) {
         var sql = "update produto set nome = ?, marca_id = ? , valor = ? where id = ?";
         try (var statement = conn.prepareStatement(sql)) {
             statement.setString(1, produto.getNome());
@@ -39,7 +39,7 @@ public class ProdutoDao {
 
     }
 
-    private void inserir(Produto produto) {
+    public void inserir(Produto produto) {
         var sql = "insert into produto (nome, marca_id, valor) values (?, ? , ?)";
         try (var statement = conn.prepareStatement(sql)) {
             statement.setString(1, produto.getNome());
