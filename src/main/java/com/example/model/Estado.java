@@ -15,7 +15,7 @@ public class Estado {
         this.area = area;
         this.populacao = populacao;
     }
-    
+
     public Long getId() {
         return id;
     }
@@ -51,5 +51,10 @@ public class Estado {
     }
     public void setPopulacao(int populacao) {
         this.populacao = populacao;
+    }
+
+    @Override
+    public String toString() {
+        return "Estado [id = " + id + ", nome = " + nome + ", uf = " + uf + ", populacao = " + populacao + "]";
     }
 }

@@ -3,6 +3,12 @@ package com.example.model;
 public class RegiaoGeografica {
     private Long id;
     private String nome;
+
+    public RegiaoGeografica(Long id) {
+        this.id = id;
+    }
+    public RegiaoGeografica(Object regiaol) {
+    }
     public Long getId() {
         return id;
     }

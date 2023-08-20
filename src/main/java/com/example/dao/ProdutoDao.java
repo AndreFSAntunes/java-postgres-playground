@@ -5,11 +5,10 @@ import java.sql.SQLException;
 
 import com.example.model.Produto;
 
-public class ProdutoDao {
-    private Connection conn;
+public class ProdutoDao extends Dao{
 
     public ProdutoDao(Connection conn) {
-        this.conn = conn;
+        super(conn);
     }
 
     public void excluir(int id) {

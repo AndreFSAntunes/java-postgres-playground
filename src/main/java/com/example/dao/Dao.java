@@ -5,7 +5,7 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 
 public class Dao {
-    private Connection conn;
+    protected Connection conn;
 
     public Dao(Connection conn) {
         this.conn = conn;
