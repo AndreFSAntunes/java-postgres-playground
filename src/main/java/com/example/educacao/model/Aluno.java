@@ -1,10 +1,15 @@
 package com.example.educacao.model;
 
-public class aluno {
+public class Aluno {
     private Integer matricula;
     private String nome;
     private double nota1, nota2, nota3;
 
+    public Aluno(String nome) {
+        this.nome = nome;
+    }
+    public Aluno() {
+    }
     public Integer getMatricula() {
         return matricula;
     }
@@ -21,8 +26,10 @@ public class aluno {
         return nota1;
     }
     public void setNota1(double nota1) {
+        validaNota(nota1);
         this.nota1 = nota1;
     }
+    
     public double getNota2() {
         return nota2;
     }
@@ -38,5 +45,11 @@ public class aluno {
   
     public double calculaMedia() {
         return (nota1 + nota2 + nota3) / 3;
+    }
+
+    private void validaNota(double nota) {
+        if (nota < 0 || nota > 10) {
+            throw new IllegalArgumentException("nota deve ser entra 0 e 10.");
+        }
     }
 }
